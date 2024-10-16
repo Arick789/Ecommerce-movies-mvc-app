@@ -191,8 +191,8 @@ namespace MovieTickets.Data
                             Descripcion = "This is the Scoob movie description",
                             Precio = 39.50,
                             ImagenURL = "http://dotnethow.net/images/movies/movie-7.jpeg",
-                            FechaInicio = DateTime.Now.AddDays(-10),
-                            FechaFinal = DateTime.Now.AddDays(-2),
+                            FechaInicio = new DateTime(2024, 10, 10),
+                            FechaFinal = DateTime.Now.AddDays(15),
                             CinemaId = 1,
                             ProductorId = 3,
                             CategoriaPelicula = Enums.CategoriaPelicula.Animada
@@ -205,6 +205,19 @@ namespace MovieTickets.Data
                             ImagenURL = "http://dotnethow.net/images/movies/movie-8.jpeg",
                             FechaInicio = DateTime.Now.AddDays(3),
                             FechaFinal = DateTime.Now.AddDays(20),
+                            CinemaId = 1,
+                            ProductorId = 5,
+                            CategoriaPelicula = Enums.CategoriaPelicula.Drama
+                        },
+                        new Pelicula()
+                        {
+                            Nombre = "Robot Salvaje",
+                            Descripcion = "Un robot llamado Roz naufraga en una isla, donde debe aprender a adaptarse a su nuevo entorno, " +
+                            "al establecer relaciones con los animales del lugar, pronto desarrolla un vínculo paternal con un ganso huérfano.",
+                            Precio = 39.50,
+                            ImagenURL = "https://drive.google.com/file/d/1hI5wWzH-qKoKFn3bI0OOk3RTtf1tLFJF/view?usp=drive_link",
+                            FechaInicio = new DateTime(2024, 10, 10),
+                            FechaFinal = new DateTime(2024, 10, 10).AddDays(30),
                             CinemaId = 1,
                             ProductorId = 5,
                             CategoriaPelicula = Enums.CategoriaPelicula.Drama

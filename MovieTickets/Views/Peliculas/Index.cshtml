@@ -30,22 +30,22 @@
                         <div class="card-body">
                             <p class="card-text">@item.Descripcion</p>
                             <p class="card-text"><b>Cinema: </b>@item.Cinema.Nombre</p>
-                            <p class="card-text"><b>Category: </b>@item.CategoriaPelicula</p>
-                            <p class="card-text"><b>Start Date: </b>@item.FechaInicio.ToString("dd MMM yy")</p>
-                            <p class="card-text"><b>End Date: </b>@item.FechaFinal.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>Categoria: </b>@item.CategoriaPelicula</p>
+                            <p class="card-text"><b>Estreno: </b>@item.FechaInicio.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>Finalizacion: </b>@item.FechaFinal.ToString("dd MMM yy")</p>
                             <p class="card-text ">
                                 <b>Status: </b>
-                                @if (DateTime.Now >= item.FechaFinal && DateTime.Now <= item.FechaFinal)
+                                @if (DateTime.Now >= item.FechaInicio && DateTime.Now <= item.FechaFinal)
                                 {
-                                    <span class="badge bg-success text-white">AVAILABLE</span>
+                                    <span class="badge bg-success text-white">DISPONIBLE</span>
                                 }
                                 else if (DateTime.Now > item.FechaFinal)
                                 {
-                                    <span class="badge bg-danger text-white">EXPIRED</span>
+                                    <span class="badge bg-danger text-white">NO DISPONIBLE</span>
                                 }
                                 else
                                 {
-                                    <span class="badge bg-primary text-white">UPCOMING</span>
+                                    <span class="badge bg-primary text-white">PROXIMAMENTE</span>
                                 }
                             </p>
 
@@ -57,11 +57,11 @@
                                asp-controller="Orders"
                                asp-action="AddItemToShoppingCart"
                                asp-route-id="@item.Id">
-                                <i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Precio.ToString("c"))
+                                <i class="bi bi-cart-plus"></i> Añadir al Carrito (Price @item.Precio.ToString("c"))
                             </a>
 
                             <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.Id">
-                                <i class="bi bi-eye-fill"></i> Show Details
+                                <i class="bi bi-eye-fill"></i> Ver Detalles
                             </a>
                         </div>
                     </div>
